@@ -3,45 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيد ميلاد سعيد يا قلبي ❤️</title>
+    <title>عيد ميلاد سعيد يا حياتي 🎂</title>
     <style>
-        body { margin: 0; background: linear-gradient(135deg, #ff9a9e, #fecfef); font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        #scratch { position: relative; width: 300px; height: 400px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; cursor: pointer; }
-        #cover { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, #d4af37, #d4af37 10px, #ffd700 10px, #ffd700 20px); z-index: 2; }
-        #content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 20px; box-sizing: border-box; background: url('activities.jpg') center/cover; z-index: 1; color: white; text-align: center; }
-        h1 { margin: 20px 0; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; font-size: 18px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 10px; }
-        canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; }
+        body { 
+            margin: 0; 
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%); 
+            font-family: 'Arial', sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            padding: 20px;
+            overflow: hidden;
+        }
+        #container { position: relative; max-width: 350px; width: 100%; }
+        #scratch { 
+            position: relative; 
+            width: 100%; 
+            height: 500px; 
+            border-radius: 25px; 
+            box-shadow: 0 20px 40px rgba(255, 154, 158, 0.4); 
+            overflow: hidden; 
+            cursor: pointer; 
+            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #fd79a8 100%);
+        }
+        #cover { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: repeating-linear-gradient(45deg, #ffd4d4 0, #ffd4d4 10px, #ff9a9e 10px, #ff9a9e 20px); 
+            z-index: 2; 
+            transition: opacity 0.5s;
+        }
+        #content { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            padding: 30px; 
+            box-sizing: border-box; 
+            background: linear-gradient(135deg, #ff9a9e, #fecfef); 
+            color: white; 
+            text-align: center; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+        }
+        h1 { 
+            margin: 0 0 20px; 
+            font-size: 28px; 
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
+        }
+        ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+        }
+        li { 
+            margin: 15px 0; 
+            font-size: 20px; 
+            background: rgba(255,255,255,0.3); 
+            padding: 15px; 
+            border-radius: 15px; 
+            backdrop-filter: blur(10px);
+        }
+        #play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            opacity: 0.8;
+            z-index: 3;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        canvas { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 4; 
+        }
+        @media (max-width: 400px) {
+            #scratch { height: 450px; }
+            h1 { font-size: 24px; }
+            li { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
-    <div id="scratch">
-        <div id="content">
-            <h1>الفعاليات اللي بدنا نعملها مع بعض 🎉</h1>
-            <ul>
-                <li>عشاء رومانسي تحت النجوم 🌌</li>
-                <li>رحلة للبحر يوم كامل 🏖️</li>
-                <li>هدية مفاجأة خاصة بيكِ 💝</li>
-                <li>رقصة خاصة لنا الاتنين 💃</li>
-                <li>وعد بكل اللي جاي معكِ ❤️</li>
-            </ul>
+    <div id="container">
+        <div id="scratch">
+            <div id="content">
+                <h1>🎉 فعاليات عيد ميلادنا مع بعض 🎉</h1>
+                <ul>
+                    <li>🌌 عشاء رومانسي تحت النجوم</li>
+                    <li>🏖️ يوم كامل في البحر</li>
+                    <li>💝 هدية مفاجأة خاصة بيكِ</li>
+                    <li>💃 رقصة خاصة لنا</li>
+                    <li>❤️ وعد بكل السنين الجاية</li>
+                </ul>
+            </div>
+            <div id="cover"></div>
+            <div id="play-icon">▶️</div>
+            <canvas id="canvas"></canvas>
         </div>
-        <div id="cover"></div>
-        <canvas id="canvas"></canvas>
     </div>
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const cover = document.getElementById('cover');
+        const playIcon = document.getElementById('play-icon');
         let isDrawing = false;
-
-        canvas.width = 300;
-        canvas.height = 400;
+        let rect;
 
         function resizeCanvas() {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
+            rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
         }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
@@ -49,22 +139,32 @@
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
 
-        canvas.addEventListener('mousedown', () => isDrawing = true);
-        canvas.addEventListener('mouseup', () => isDrawing = false);
+        // Mouse events
+        canvas.addEventListener('mousedown', startDraw);
         canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; });
-        canvas.addEventListener('touchend', () => isDrawing = false);
-        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); const rect = canvas.getBoundingClientRect(); const touch = e.touches[0]; draw({ clientX: touch.clientX - rect.left, clientY: touch.clientY - rect.top }); });
+        canvas.addEventListener('mouseup', stopDraw);
+        canvas.addEventListener('mouseout', stopDraw);
+
+        // Touch events for mobile (TikTok style)
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e.touches[0]); });
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
+        canvas.addEventListener('touchend', (e) => { e.preventDefault(); stopDraw(); });
 
         let lastX = 0, lastY = 0;
+        function startDraw(e) {
+            isDrawing = true;
+            rect = canvas.getBoundingClientRect();
+            lastX = (e.clientX || e.touches[0].clientX) - rect.left;
+            lastY = (e.clientY || e.touches[0].clientY) - rect.top;
+            playIcon.style.display = 'none';
+        }
         function draw(e) {
             if (!isDrawing) return;
-            const rect = canvas.getBoundingClientRect();
             const x = (e.clientX || e.touches[0].clientX) - rect.left;
             const y = (e.clientY || e.touches[0].clientY) - rect.top;
 
             ctx.globalCompositeOperation = 'destination-out';
-            ctx.lineWidth = 30;
+            ctx.lineWidth = 40; // أوسع للمسح السهل
             ctx.beginPath();
             ctx.moveTo(lastX, lastY);
             ctx.lineTo(x, y);
@@ -72,15 +172,19 @@
             lastX = x;
             lastY = y;
 
+            // Check reveal progress
             const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             let transparentPixels = 0;
             for (let i = 3; i < imageData.data.length; i += 4) {
                 if (imageData.data[i] === 0) transparentPixels++;
             }
-            if (transparentPixels > canvas.width * canvas.height * 0.7) {
+            if (transparentPixels > (canvas.width * canvas.height * 0.6)) { // 60% يكشف كامل
                 cover.style.opacity = '0';
-                setTimeout(() => cover.style.display = 'none', 500);
+                setTimeout(() => { cover.style.display = 'none'; }, 500);
             }
+        }
+        function stopDraw() {
+            isDrawing = false;
         }
     </script>
 </body>
