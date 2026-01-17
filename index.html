@@ -3,189 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيد ميلاد سعيد يا حياتي 🎂</title>
+    <title>عيد ميلاد سعيد يا حبيبتي! 💖</title>
     <style>
-        body { 
-            margin: 0; 
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%); 
-            font-family: 'Arial', sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            padding: 20px;
-            overflow: hidden;
-        }
-        #container { position: relative; max-width: 350px; width: 100%; }
-        #scratch { 
-            position: relative; 
-            width: 100%; 
-            height: 500px; 
-            border-radius: 25px; 
-            box-shadow: 0 20px 40px rgba(255, 154, 158, 0.4); 
-            overflow: hidden; 
-            cursor: pointer; 
-            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #fd79a8 100%);
-        }
-        #cover { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: repeating-linear-gradient(45deg, #ffd4d4 0, #ffd4d4 10px, #ff9a9e 10px, #ff9a9e 20px); 
-            z-index: 2; 
-            transition: opacity 0.5s;
-        }
-        #content { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            padding: 30px; 
-            box-sizing: border-box; 
-            background: linear-gradient(135deg, #ff9a9e, #fecfef); 
-            color: white; 
-            text-align: center; 
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            z-index: 1;
-        }
-        h1 { 
-            margin: 0 0 20px; 
-            font-size: 28px; 
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
-        }
-        ul { 
-            list-style: none; 
-            padding: 0; 
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
+            user-select: none;
         }
-        li { 
-            margin: 15px 0; 
-            font-size: 20px; 
-            background: rgba(255,255,255,0.3); 
-            padding: 15px; 
-            border-radius: 15px; 
-            backdrop-filter: blur(10px);
+        h1 { color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .activity {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            border: 3px solid #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #ffd700;
         }
-        #play-icon {
+        .activity img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .activity canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: grab;
+        }
+        .scratch-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 60px;
-            opacity: 0.8;
-            z-index: 3;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.1); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-        canvas { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            z-index: 4; 
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            pointer-events: none;
+            z-index: 2;
         }
         @media (max-width: 400px) {
-            #scratch { height: 450px; }
-            h1 { font-size: 24px; }
-            li { font-size: 18px; }
+            .activity { width: 250px; height: 160px; }
+            .scratch-text { font-size: 20px; }
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <div id="scratch">
-            <div id="content">
-                <h1>🎉 فعاليات عيد ميلادنا مع بعض 🎉</h1>
-                <ul>
-                    <li>🌌 عشاء رومانسي تحت النجوم</li>
-                    <li>🏖️ يوم كامل في البحر</li>
-                    <li>💝 هدية مفاجأة خاصة بيكِ</li>
-                    <li>💃 رقصة خاصة لنا</li>
-                    <li>❤️ وعد بكل السنين الجاية</li>
-                </ul>
-            </div>
-            <div id="cover"></div>
-            <div id="play-icon">▶️</div>
-            <canvas id="canvas"></canvas>
-        </div>
+    <h1>عيد ميلاد سعيد يا قلبي! اكشطي كل مربع واكتشفي اللي مخبي 💕</h1>
+    
+    <div class="activity">
+        <h3 style="position: absolute; top: 10px; right: 10px; color: #fff; z-index: 2;">Activity 1</h3>
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop" alt="غداء رومانسي">
+        <canvas></canvas>
+        <div class="scratch-text">اكشطي هون بتعرفي! 🥰</div>
     </div>
-    <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const cover = document.getElementById('cover');
-        const playIcon = document.getElementById('play-icon');
-        let isDrawing = false;
-        let rect;
+    
+    <div class="activity">
+        <h3 style="position: absolute; top: 10px; right: 10px; color: #fff; z-index: 2;">Activity 2</h3>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=300&h=200&fit=crop" alt="سينما مع بعض">
+        <canvas></canvas>
+        <div class="scratch-text">اكشطي هون بتعرفي! 🎥</div>
+    </div>
+    
+    <div class="activity">
+        <h3 style="position: absolute; top: 10px; right: 10px; color: #fff; z-index: 2;">Activity 3</h3>
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=300&h=200&fit=crop" alt="تمشية في البحر">
+        <canvas></canvas>
+        <div class="scratch-text">اكشطي هون بتعرفي! 🌅</div>
+    </div>
+    
+    <div class="activity">
+        <h3 style="position: absolute; top: 10px; right: 10px; color: #fff; z-index: 2;">Activity 4</h3>
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="هدية مفاجأة">
+        <canvas></canvas>
+        <div class="scratch-text">اكشطي هون بتعرفي! 🎁</div>
+    </div>
 
-        function resizeCanvas() {
-            rect = canvas.getBoundingClientRect();
+    <script>
+        document.querySelectorAll('.activity').forEach((card, index) => {
+            const canvas = card.querySelector('canvas');
+            const ctx = canvas.getContext('2d');
+            const rect = card.getBoundingClientRect();
             canvas.width = rect.width;
             canvas.height = rect.height;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
 
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+            // طلاء الطبقة الذهبية
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#ffd700');
+            gradient.addColorStop(1, '#ffed4e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Mouse events
-        canvas.addEventListener('mousedown', startDraw);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseup', stopDraw);
-        canvas.addEventListener('mouseout', stopDraw);
+            // نص اكشط
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 22px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('اكشط هون!', canvas.width / 2, canvas.height / 2);
 
-        // Touch events for mobile (TikTok style)
-        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e.touches[0]); });
-        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
-        canvas.addEventListener('touchend', (e) => { e.preventDefault(); stopDraw(); });
+            let isDrawing = false;
 
-        let lastX = 0, lastY = 0;
-        function startDraw(e) {
-            isDrawing = true;
-            rect = canvas.getBoundingClientRect();
-            lastX = (e.clientX || e.touches[0].clientX) - rect.left;
-            lastY = (e.clientY || e.touches[0].clientY) - rect.top;
-            playIcon.style.display = 'none';
-        }
-        function draw(e) {
-            if (!isDrawing) return;
-            const x = (e.clientX || e.touches[0].clientX) - rect.left;
-            const y = (e.clientY || e.touches[0].clientY) - rect.top;
-
-            ctx.globalCompositeOperation = 'destination-out';
-            ctx.lineWidth = 40; // أوسع للمسح السهل
-            ctx.beginPath();
-            ctx.moveTo(lastX, lastY);
-            ctx.lineTo(x, y);
-            ctx.stroke();
-            lastX = x;
-            lastY = y;
-
-            // Check reveal progress
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            let transparentPixels = 0;
-            for (let i = 3; i < imageData.data.length; i += 4) {
-                if (imageData.data[i] === 0) transparentPixels++;
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                return {
+                    x: (e.clientX || e.touches[0].clientX) - rect.left,
+                    y: (e.clientY || e.touches[0].clientY) - rect.top
+                };
             }
-            if (transparentPixels > (canvas.width * canvas.height * 0.6)) { // 60% يكشف كامل
-                cover.style.opacity = '0';
-                setTimeout(() => { cover.style.display = 'none'; }, 500);
+
+            function scratch(x, y) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 25, 0, 2 * Math.PI);
+                ctx.fill();
             }
-        }
-        function stopDraw() {
-            isDrawing = false;
-        }
+
+            ['mousedown', 'touchstart'].forEach(ev => {
+                canvas.addEventListener(ev, (e) => {
+                    isDrawing = true;
+                    e.preventDefault();
+                    scratch(getPos(e).x, getPos(e).y);
+                });
+            });
+
+            ['mousemove', 'touchmove'].forEach(ev => {
+                canvas.addEventListener(ev, (e) => {
+                    if (!isDrawing) return;
+                    e.preventDefault();
+                    scratch(getPos(e).x, getPos(e).y);
+                });
+            });
+
+            ['mouseup', 'touchend'].forEach(ev => {
+                canvas.addEventListener(ev, () => { isDrawing = false; });
+            });
+        });
     </script>
 </body>
 </html>
