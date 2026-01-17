@@ -267,7 +267,7 @@
             }
 
             function checkProgress() {
-                const progress = strokeCount / 8; // 8 ضربات = نص المنطقة
+                const progress = strokeCount / 15; // 8 ضربات = نص المنطقة
                 
                 // شفافية تدريجية
                 const fade = Math.max(0.1, 1 - progress * 0.12);
@@ -275,7 +275,7 @@
                 scratchText.style.opacity = fade;
                 
                 // لما نكشط نصها (8 ضربات) = ينكشف كل شيء!
-                if (strokeCount >= 8) {
+                if (strokeCount >= 15) {
                     revealAll();
                 }
             }
